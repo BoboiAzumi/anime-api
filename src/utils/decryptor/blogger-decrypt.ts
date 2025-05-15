@@ -4,7 +4,10 @@ import { Decryptor, Source, SourceItem } from "./types";
 
 export class BloggerDecryptor implements Decryptor {
     async processing(url: string, ua: string): Promise<Source> {
-        const html = await fetching(url, ua)
+        const html = await fetching(url, ua, {
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://www.google.com/"
+        })
         const match = html.match(/var VIDEO_CONFIG = (\{.*[,]?\})/);
         const source: Source = {
             type: "",

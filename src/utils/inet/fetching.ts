@@ -1,7 +1,12 @@
-export async function fetching(url: string, ua: string = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"){
+export async function fetching(
+    url: string, 
+    ua: string = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+    headers?: object,
+){
     const f = await fetch(url, {
         headers: {
-            "User-Agent": ua
+            "User-Agent": ua,
+            ...headers
         }
     })
     const html = await f.text()
