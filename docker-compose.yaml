@@ -1,0 +1,11 @@
+services:
+  anime-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    tty: true
+    restart: always
+
+    ports:
+      - "3000:3000"
