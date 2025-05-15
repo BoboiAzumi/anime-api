@@ -15,6 +15,7 @@ export class BloggerDecryptor implements Decryptor {
         }
 
         if (!match) {
+            source.poster = html
             return source
         }
 

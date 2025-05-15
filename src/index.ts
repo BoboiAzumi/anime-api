@@ -13,7 +13,7 @@ import { watch } from "./services/watch"
 const app = new Hono()
 
 app.get('/:plugin/page/:page/', search)
-app.get('/:plugin/series/:slug/', series)
+app.get('/:plugin/series/:slug', series)
 app.get("/:plugin/watch/:slug", watch)
 app.get("*", (c: Context) => {
   return c.json({
