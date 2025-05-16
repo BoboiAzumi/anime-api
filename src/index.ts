@@ -1,4 +1,4 @@
-export type { 
+/*export type { 
     RegisteredPlugin,
     AnimePlugin,
     PluginName,
@@ -23,4 +23,5 @@ app.get("*", (c: Context) => {
   })
 })
 
-export default app
+export default app*/
+console.log("WORK")
