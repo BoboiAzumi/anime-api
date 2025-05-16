@@ -14,4 +14,4 @@ COPY . .
 EXPOSE 3000
 
 #CMD ["bun", "run", "src/index.ts"]
-CMD ["sh", "-c", "ping", "8.8.8.8"]
+CMD ["sh", "-c", "ping 8.8.8.8"]
