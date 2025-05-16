@@ -6,7 +6,7 @@ COPY package.json ./
 COPY bun.lock ./
 
 RUN apt update -y && apt upgrade -y
-RUN apk add --no-cache iputils
+RUN apt install -y iputils-ping
 RUN bun install
 
 COPY . .
