@@ -1,10 +1,3 @@
-export type { 
-    RegisteredPlugin,
-    AnimePlugin,
-    PluginName,
-    PluginSelection
-} from "./pipeline/types"
-
 import { Context, Hono } from 'hono'
 import { search } from "./services/search"
 import { series } from "./services/series"
@@ -22,6 +15,13 @@ app.get("*", (c: Context) => {
 })
 
 //export default app
+
+export type { 
+    RegisteredPlugin,
+    AnimePlugin,
+    PluginName,
+    PluginSelection
+} from "./pipeline/types"
 
 Bun.serve({
   fetch: app.fetch,
