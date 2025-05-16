@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package.json ./
 COPY bun.lock ./
 
+RUN apt update && apt upgrade
+RUN apt install net-tools
 RUN bun install
 
 COPY . .
@@ -12,4 +14,4 @@ COPY . .
 EXPOSE 3000
 
 #CMD ["bun", "run", "src/index.ts"]
-CMD ["ping", "8.8.8.8"]
+CMD ["sh", "-c", "ping", "8.8.8.8"]
