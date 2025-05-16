@@ -5,7 +5,7 @@ WORKDIR /app
 COPY bun.lock ./
 COPY package.json ./
 
-RUN bun install
+#RUN bun install
 
 COPY tsconfig.json ./
 COPY .env ./

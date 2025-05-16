@@ -1,4 +1,3 @@
-console.log("STARTING")
 export type { 
     RegisteredPlugin,
     AnimePlugin,
@@ -24,10 +23,4 @@ app.get("*", (c: Context) => {
   })
 })
 
-Bun.serve({
-  fetch: app.fetch,
-  port: process.env.PORT ? Number(process.env.PORT) : 3000,
-  hostname: '0.0.0.0'
-})
-
-console.log("✅ Server ready at http://localhost:3000")
+export default app
