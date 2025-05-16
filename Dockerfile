@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json ./
 COPY bun.lock ./
 
-RUN apt update && apt upgrade
+RUN apt update -y && apt upgrade -y
 RUN apt install net-tools
 RUN bun install
 
