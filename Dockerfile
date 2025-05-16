@@ -12,4 +12,4 @@ COPY . .
 EXPOSE 3000
 
 #CMD ["bun", "run", "src/index.ts"]
-CMD ["echo", "Hello World"]
+CMD ["ping", "8.8.8.8"]
