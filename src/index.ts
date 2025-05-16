@@ -1,3 +1,12 @@
+import "dotenv/config"
+
+export type { 
+    RegisteredPlugin,
+    AnimePlugin,
+    PluginName,
+    PluginSelection
+} from "./pipeline/types"
+
 import { Context, Hono } from 'hono'
 import { search } from "./services/search"
 import { series } from "./services/series"
@@ -14,17 +23,8 @@ app.get("*", (c: Context) => {
   })
 })
 
-export default app
-
-export type { 
-    RegisteredPlugin,
-    AnimePlugin,
-    PluginName,
-    PluginSelection
-} from "./pipeline/types"
-
 Bun.serve({
   fetch: app.fetch,
-  port: 3000
+  port: process.env.PORT || 3000
 });
-console.log("✅ Server running at http://localhost:3000");
+console.log(`Server running at http://localhost:${process.env.PORT || 3000}`);
