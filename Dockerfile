@@ -4,10 +4,9 @@ WORKDIR /app
 
 COPY package.json .
 COPY bun.lock .
+COPY . .
 
 RUN bun install
-
-COPY . .
 
 EXPOSE 3000
 
