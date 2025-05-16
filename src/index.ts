@@ -5,8 +5,6 @@ export type {
     PluginSelection
 } from "./pipeline/types"
 
-import 'dotenv/config';
-
 import { Context, Hono } from 'hono'
 import { search } from "./services/search"
 import { series } from "./services/series"
