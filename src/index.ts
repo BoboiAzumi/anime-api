@@ -14,7 +14,7 @@ app.get("*", (c: Context) => {
   })
 })
 
-//export default app
+export default app
 
 export type { 
     RegisteredPlugin,
