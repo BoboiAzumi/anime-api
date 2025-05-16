@@ -2,7 +2,7 @@
   "name": "anime-api",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "start": "bun src/index.ts"
+    "start": "bun run src/index.ts"
   },
   "dependencies": {
     "@types/crypto-js": "^4.2.2",
