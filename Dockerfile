@@ -6,7 +6,7 @@ COPY package.json ./
 COPY bun.lock ./
 
 RUN apt update -y && apt upgrade -y
-RUN apt install net-tools
+RUN apk add --no-cache iputils
 RUN bun install
 
 COPY . .
