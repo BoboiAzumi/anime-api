@@ -2,9 +2,14 @@ FROM oven/bun:latest
 
 WORKDIR /app
 
-COPY . .
+COPY bun.lockb ./
+COPY package.json ./
 
 RUN bun install
+
+COPY tsconfig.json ./
+COPY .env ./
+COPY src ./
 
 EXPOSE 3000
 
