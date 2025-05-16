@@ -5,12 +5,12 @@ export type {
     PluginSelection
 } from "./pipeline/types"
 
+import 'dotenv/config';
+
 import { Context, Hono } from 'hono'
 import { search } from "./services/search"
 import { series } from "./services/series"
 import { watch } from "./services/watch"
-import dotenv from "dotenv"
-dotenv.config()
 
 const app = new Hono()
 
