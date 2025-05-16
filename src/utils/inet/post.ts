@@ -1,4 +1,5 @@
 import { SocksProxyAgent } from "socks-proxy-agent"
+import fetch from 'node-fetch';
 
 export async function post(
     url: string, 
@@ -12,11 +13,13 @@ export async function post(
         ...headers
     }
 
+    const agent = process.env.socks ? new SocksProxyAgent(process.env.socks) : undefined;
+
     const f = await fetch(url, {
         method: "POST",
         headers: headersParser ,
         body: bodyParser,
-        ...(process.env.socks ? new SocksProxyAgent(process.env.socks) : {})
+        agent
     })
     const html = await f.text()
 
