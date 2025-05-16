@@ -1,10 +1,10 @@
-FROM oven/bun:canary-debian
+FROM oven/bun:1.2.7
 
 WORKDIR /app
 
 COPY . .
 
-#RUN bun install
+RUN bun install
 
 EXPOSE 3000
 
