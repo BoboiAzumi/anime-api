@@ -6,7 +6,7 @@ export async function fetching(
     ua: string = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
     headers?: object,
 ){
-    const agent = process.env.socks ? new SocksProxyAgent(process.env.socks) : undefined;
+    const agent = process.env.SOCKS ? new SocksProxyAgent(process.env.SOCKS) : undefined;
 
     const f = await fetch(url, {
         headers: {

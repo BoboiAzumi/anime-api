@@ -13,7 +13,7 @@ export async function post(
         ...headers
     }
 
-    const agent = process.env.socks ? new SocksProxyAgent(process.env.socks) : undefined;
+    const agent = process.env.SOCKS ? new SocksProxyAgent(process.env.SOCKS) : undefined;
 
     const f = await fetch(url, {
         method: "POST",
